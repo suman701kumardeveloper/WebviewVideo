@@ -32,6 +32,9 @@ public class MyActivity extends Activity {
        
     }
     
+    /**
+    * Settings for webview
+    */
     
     public webSettings(){
         mWebViewClient = new myWebViewClient();
