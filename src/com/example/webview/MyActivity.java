@@ -28,7 +28,12 @@ public class MyActivity extends Activity {
         setContentView(R.layout.main);
         customViewContainer = (FrameLayout) findViewById(R.id.customViewContainer);
         webView = (WebView) findViewById(R.id.webView);
-
+        webSettings();
+       
+    }
+    
+    
+    public webSettings(){
         mWebViewClient = new myWebViewClient();
         webView.setWebViewClient(mWebViewClient);
 
@@ -38,6 +43,16 @@ public class MyActivity extends Activity {
         webView.getSettings().setAppCacheEnabled(true);
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setSaveFormData(true);
+        webView.getSettings().setLoadsImagesAutomatically(true);
+        webView.getSettings().setPluginsEnabled(true);
+        webView.getSettings().setRenderPriority(RenderPriority.HIGH);
+        webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.getSettings().setDatabaseEnabled(true);
+        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        
+        <-- paste web url  -->
+            
         webView.loadUrl("http://m.youtube.com");
     }
 
